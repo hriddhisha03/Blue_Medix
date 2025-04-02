@@ -56,20 +56,24 @@ const EditUser = () => {
     }
   };
 
-  if (loading) return <p>Loading user details...</p>;
-  if (error) return <p className="text-red-500">{error}</p>;
+  if (loading) return <p className="text-center text-white">Loading user details...</p>;
+  if (error) return <p className="text-white text-center">{error}</p>;
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen flex justify-center items-center">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-96">
-        <h2 className="text-2xl font-bold mb-4 text-center">Edit User</h2>
+    <div className="h-[calc(100vh-78px)] flex justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 p-6">
+      <div className="bg-white/20 backdrop-blur-lg shadow-xl rounded-2xl p-8 w-full max-w-md text-white border border-white/30">
+        <h2 className="text-3xl font-bold text-white text-center p-3 rounded-lg mb-6">
+          Edit User
+        </h2>
+
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="border p-2 rounded"
+            className="w-full bg-transparent border p-2 rounded text-white placeholder-gray-300"
+            placeholder="Enter name"
             required
           />
           <input
@@ -77,18 +81,25 @@ const EditUser = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="border p-2 rounded"
+            className="w-full bg-transparent border p-2 rounded text-white placeholder-gray-300"
+            placeholder="Enter email"
             required
           />
-          <select name="gender" value={formData.gender} onChange={handleChange} className="border p-2 rounded" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+          <select name="gender" value={formData.gender} onChange={handleChange} className="w-full bg-transparent border p-2 rounded text-white" required>
+            <option value="male" className="text-black">Male</option>
+            <option value="female" className="text-black">Female</option>
           </select>
-          <select name="role" value={formData.role} onChange={handleChange} className="border p-2 rounded" required>
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
+          <select name="role" value={formData.role} onChange={handleChange} className="w-full bg-transparent border p-2 rounded text-white" required>
+            <option value="isCustomer" className="text-black">Customer</option>
+            <option value="isAdmin" className="text-black">Admin</option>
+            <option value="isSeller" className="text-black">Seller</option>
           </select>
-          <button type="submit" className="bg-blue-500 text-white p-2 rounded">Update</button>
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-pink-500 to-red-500 text-white py-2 rounded-lg shadow-md hover:opacity-90 transition"
+          >
+            Update
+          </button>
         </form>
       </div>
     </div>

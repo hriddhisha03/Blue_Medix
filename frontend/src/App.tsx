@@ -11,6 +11,7 @@ import UserList from './pages/UserList'
 import ViewUser from './pages/ViewUser'
 import EditUser from './pages/EditUser'
 import AddProduct from './pages/AddProduct'
+import EditProduct from './pages/EditProduct'
 
 
 function App() {
@@ -18,15 +19,16 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route path='/' element={<Dashboard/>}/>
         <Route path="/admin" element={<Admin />}/>
         <Route path="/add-user" element={<AddUsers />} />
-        <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/products' element={<ProductList/>}/>
         <Route path='/products/:id' element={<ViewProduct/>}/>
         <Route path='/users' element={<UserList/>}/>
         <Route path='/users/:id' element={<ViewUser/>}/>
         <Route path = '/edit-user/:id' element={<EditUser/>}/>
         <Route path = '/add-product' element={<AddProduct/>}/>
+        <Route path = '/edit-product/:id' element={<EditProduct/>}/>
       </Route>
     </Routes>
       

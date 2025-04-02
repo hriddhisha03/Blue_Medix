@@ -5,7 +5,7 @@ const Dashboard: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-<div className="h-[calc(100vh-73px)] bg-red-100 flex">
+<div className="h-[calc(100vh-78px)] bg-red-100 flex">
       {/* User Management */}
       <div className="flex flex-col justify-center items-center w-1/2 h-full user p-10 shadow-lg transition-all duration-300 ease-in-out hover:w-[55%]">
         <h2 className="text-4xl font-bold mb-6 text-white">

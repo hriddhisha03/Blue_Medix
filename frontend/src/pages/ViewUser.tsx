@@ -34,17 +34,21 @@ const ViewUser = () => {
     fetchUser();
   }, [id]);
 
-  if (loading) return <p>Loading user details...</p>;
-  if (error) return <p className="text-red-500">{error}</p>;
+  if (loading) return <p className="text-white text-center">Loading user details...</p>;
+  if (error) return <p className="text-red-400 text-center">{error}</p>;
 
   return (
-    <div className="p-6 bg-gray-100 h-[calc(100vh-73px)] flex justify-center items-center">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-96">
-        <UserCircle size={80} className="mx-auto" />
-        <h2 className="text-2xl font-bold mb-4 text-center">{user?.name}</h2>
-        <p className="text-gray-600"><strong>Email:</strong> {user?.email}</p>
-        <p className="text-gray-600"><strong>Gender:</strong> {user?.gender}</p>
-        <p className="text-gray-600"><strong>Role:</strong> {user?.role=="isAdmin"?"Admin":user?.role=="isCustomer"?"Customer":"Seller"}</p>
+    <div className="h-[calc(100vh-78px)] flex justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 p-6">
+      <div className="bg-white/20 backdrop-blur-lg shadow-xl rounded-2xl p-8 w-full max-w-md text-white border border-white/30">
+        <UserCircle size={80} className="mx-auto text-white mb-4" />
+        <h2 className="text-3xl font-bold text-white text-center p-3 rounded-lg">
+          {user?.name}
+        </h2>
+        <p className="text-gray-200"><strong>Email:</strong> {user?.email}</p>
+        <p className="text-gray-200"><strong>Gender:</strong> {user?.gender}</p>
+        <p className="text-gray-200">
+          <strong>Role:</strong> {user?.role === "isAdmin" ? "Admin" : user?.role === "isCustomer" ? "Customer" : "Seller"}
+        </p>
       </div>
     </div>
   );
